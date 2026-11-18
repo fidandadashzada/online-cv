@@ -1,6 +1,3 @@
-/* ============================================================
-   1. TƏRCÜMƏLƏR (az / en)
-   ============================================================ */
 const translations = {
   az: {
     "title": "Fidan Dadaşzadə — Online CV",
@@ -90,7 +87,7 @@ const translations = {
   }
 };
 
-/* Bacarıqlar */
+
 const skills = {
   az: {
     "Veb": ["HTML5", "CSS3", "Flexbox və Grid", "Responsiv dizayn"],
@@ -106,7 +103,7 @@ const skills = {
   }
 };
 
-/* Layihələr (yeni layihə əlavə etmək üçün bir sətir kifayətdir) */
+
 const builtAz = "Bu səhifə: semantik HTML, Grid, Flexbox, Position ilə yazılmışdır.";
 const builtEn = "This page is built with semantic HTML, Grid, Flexbox and Position.";
 
@@ -128,9 +125,7 @@ const projects = [
   { title: "Fitness2",  text: { az: builtAz, en: builtEn }, tags: "HTML · CSS", link: "https://fitness2-zeta.vercel.app/" }
 ];
 
-/* ============================================================
-   2. KÖMƏKÇİ FUNKSİYALAR
-   ============================================================ */
+
 const root = document.documentElement;
 
 function save(key, value) {
@@ -145,9 +140,7 @@ if (!translations[lang]) lang = "az";
 
 const t = (key) => translations[lang][key];
 
-/* ============================================================
-   3. SKILLS və PROJECTS render
-   ============================================================ */
+
 const skillGroups = document.getElementById("skillGroups");
 const projectList = document.getElementById("projectList");
 
@@ -182,9 +175,7 @@ function renderProjects() {
   });
 }
 
-/* ============================================================
-   4. DİL DƏYİŞMƏ
-   ============================================================ */
+
 const langButtons = document.querySelectorAll(".lang button");
 
 function applyLang(newLang) {
@@ -212,9 +203,7 @@ langButtons.forEach((btn) => {
   btn.addEventListener("click", () => applyLang(btn.dataset.lang));
 });
 
-/* ============================================================
-   5. AĞ / QARA REJİM
-   ============================================================ */
+
 const themeBtn = document.getElementById("themeBtn");
 
 themeBtn.addEventListener("click", () => {
@@ -223,9 +212,7 @@ themeBtn.addEventListener("click", () => {
   save("theme", next);
 });
 
-/* ============================================================
-   6. MENYUDA AKTİV BÖLMƏ
-   ============================================================ */
+
 const links = document.querySelectorAll("nav a");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
@@ -236,9 +223,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { rootMargin: "-40% 0px -55% 0px" });
 document.querySelectorAll("section").forEach((s) => observer.observe(s));
 
-/* ============================================================
-   7. ƏLAQƏ FORMU
-   ============================================================ */
+
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("status");
 
@@ -268,7 +253,5 @@ form.addEventListener("submit", (e) => {
   if (ok) form.reset();
 });
 
-/* ============================================================
-   8. BAŞLANĞIC
-   ============================================================ */
+
 applyLang(lang);

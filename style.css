@@ -11,7 +11,7 @@
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-/* Qara rejim */
+
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#14131B; --surface:#1D1C27; --ink:#ECEAF5; --muted:#A8A5BA;
